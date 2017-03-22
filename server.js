@@ -80,14 +80,16 @@ var htmlTemplate=`
 return htmlTemplate;
 }
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+}); 
+
+
 app.get('/test-db',function(req,res){
     //make a select request
     ///return a response with the results
 });
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
 
 var counter=0;
 app.get('/counter',function(req,res)
